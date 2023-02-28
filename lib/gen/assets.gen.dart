@@ -12,8 +12,24 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Camera.png
+  AssetGenImage get camera => const AssetGenImage('assets/images/Camera.png');
+
+  /// File path: assets/images/Edit.png
+  AssetGenImage get edit => const AssetGenImage('assets/images/Edit.png');
+
+  /// File path: assets/images/Ellipse.png
+  AssetGenImage get ellipse => const AssetGenImage('assets/images/Ellipse.png');
+
   /// File path: assets/images/Vector.png
   AssetGenImage get vector => const AssetGenImage('assets/images/Vector.png');
+
+  /// File path: assets/images/Work.png
+  AssetGenImage get work => const AssetGenImage('assets/images/Work.png');
+
+  /// File path: assets/images/battery-charging.png
+  AssetGenImage get batteryCharging =>
+      const AssetGenImage('assets/images/battery-charging.png');
 
   /// File path: assets/images/buildings.png
   AssetGenImage get buildings =>
@@ -39,12 +55,21 @@ class $AssetsImagesGen {
   AssetGenImage get receiptItem =>
       const AssetGenImage('assets/images/receipt-item.png');
 
+  /// File path: assets/images/security-card.png
+  AssetGenImage get securityCard =>
+      const AssetGenImage('assets/images/security-card.png');
+
   /// File path: assets/images/water.png
   AssetGenImage get water => const AssetGenImage('assets/images/water.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        camera,
+        edit,
+        ellipse,
         vector,
+        work,
+        batteryCharging,
         buildings,
         cardEdit,
         eletro,
@@ -52,6 +77,7 @@ class $AssetsImagesGen {
         moneys,
         paason,
         receiptItem,
+        securityCard,
         water
       ];
 }

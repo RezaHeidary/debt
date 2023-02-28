@@ -1,4 +1,4 @@
-import '../../gen/assets.gen.dart';
+import '../../../gen/assets.gen.dart';
 
 class HomeModel {
   HomeModel._();
@@ -14,7 +14,7 @@ class HomeModel {
   static var imagePath = [
     Assets.images.cardEdit.path,
     Assets.images.buildings.path,
-    Assets.images.paason.path,
+    Assets.images.securityCard.path,
     Assets.images.cardEdit.path,
     Assets.images.frame.path,
     Assets.images.receiptItem.path,

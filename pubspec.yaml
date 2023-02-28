@@ -38,6 +38,8 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.3
   convex_bottom_bar: ^3.2.0
+  another_stepper: ^1.2.2
+  smooth_star_rating_null_safety: ^1.0.4+2
 
 dev_dependencies:
   flutter_test:
