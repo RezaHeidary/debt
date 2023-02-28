@@ -16,4 +16,12 @@ class MyStr {
   static const String titleEdietName = "نام و نام خانوادگی :";
   static const String titleEdietPhone = "شماره موبایل :";
   static const String btnEditUser = "تایید ویرایش";
+  static const String welcomeStr = "سلام خوش اومدی ";
+  static const String next = "مرحله بعد";
+  static const String sendReport = "ارسال گزارش";
+  static const String point = "امتیاز این مرحله";
+  static const String applying = "درخواست متقاضی";
+  static const String bank = "بانک";
+  static const String water = "اداره آب";
+  static const String electricity = "اداره برق";
 }

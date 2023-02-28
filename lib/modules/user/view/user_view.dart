@@ -33,7 +33,7 @@ class UserView extends StatelessWidget {
                   top: 40,
                   right: 50,
                   child: Text(
-                    "سلام خوش اومدی ",
+                    MyStr.welcomeStr,
                     style: theme.textTheme.titleSmall,
                   ),
                 ),

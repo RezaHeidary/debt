@@ -1,5 +1,6 @@
 import 'package:debt/core/theme/colors.dart';
 import 'package:debt/core/theme/style.dart';
+import 'package:debt/core/value/my_str.dart';
 import 'package:debt/gen/assets.gen.dart';
 import 'package:debt/modules/home/model/home_model.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class HomeView extends StatelessWidget {
                       top: 40,
                       right: 50,
                       child: Text(
-                        "سلام خوش اومدی ",
+                        MyStr.welcomeStr,
                         style: theme.textTheme.titleSmall,
                       ),
                     ),
@@ -69,15 +70,15 @@ class HomeView extends StatelessWidget {
                           children: [
                             CircleInformation(
                               imagePath: Assets.images.eletro.path,
-                              title: "اداره برق",
+                              title: MyStr.electricity,
                             ),
                             CircleInformation(
                               imagePath: Assets.images.water.path,
-                              title: "اداره آب",
+                              title: MyStr.water,
                             ),
                             CircleInformation(
                               imagePath: Assets.images.moneys.path,
-                              title: "بانک",
+                              title: MyStr.bank,
                             ),
                           ],
                         ),

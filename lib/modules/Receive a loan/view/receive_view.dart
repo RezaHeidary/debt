@@ -60,7 +60,7 @@ class ReceiveView extends StatelessWidget {
                       top: 40,
                       right: 50,
                       child: Text(
-                        "سلام خوش اومدی ",
+                        MyStr.welcomeStr,
                         style: theme.textTheme.titleSmall,
                       ),
                     ),
@@ -225,7 +225,7 @@ class ReceiveView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "درخواست متقاضی",
+                      MyStr.applying,
                       style: theme.textTheme.bodyLarge,
                     ),
                     Text(
@@ -239,7 +239,7 @@ class ReceiveView extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "امتیاز این مرحله",
+            MyStr.point,
             style: theme.textTheme.labelLarge,
           ),
           const SizedBox(
@@ -280,13 +280,13 @@ class ReceiveView extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ReceiveWidget.widgetBtnRReceive(false),
-                child: const Text("مرحله بعد"),
+                child: const Text(MyStr.next),
               ),
               ElevatedButton(
                 onPressed: () {},
                 style: ReceiveWidget.widgetBtnRReceive(true),
                 child: Text(
-                  "ارسال گزارش",
+                  MyStr.sendReport,
                   style: theme.textTheme.bodyLarge,
                 ),
               )
