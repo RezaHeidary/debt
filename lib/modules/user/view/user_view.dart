@@ -146,6 +146,9 @@ class UserView extends StatelessWidget {
               const UserWidget(),
             ]),
           ),
+          const SizedBox(
+            height: 50,
+          ),
           ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -158,7 +161,7 @@ class UserView extends StatelessWidget {
             child: const Text(MyStr.btnEditUser),
           ),
           const SizedBox(
-            height: 25,
+            height: 50,
           ),
         ]),
       ),

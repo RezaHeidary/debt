@@ -8,8 +8,13 @@ class Themes {
     fontFamily: GoogleFonts.vazirmatn().fontFamily,
     textTheme: const TextTheme(
       titleLarge: TextStyle(color: Colors.white),
+      bodySmall: TextStyle(color: MyColor.appBarColor, fontSize: 12),
       titleMedium: TextStyle(color: Colors.white),
       titleSmall: TextStyle(color: Colors.grey),
+      headlineSmall: TextStyle(
+          color: MyColor.appBarColor,
+          fontSize: 18,
+          fontWeight: FontWeight.bold),
       bodyLarge: TextStyle(
           color: MyColor.appBarColor,
           fontSize: 16,

@@ -177,7 +177,8 @@ class ReceiveView extends StatelessWidget {
         ElevatedButton(
             style: ButtonStyle(
                 elevation: const MaterialStatePropertyAll(1),
-                backgroundColor: MaterialStatePropertyAll(MyColor.btnColor),
+                backgroundColor:
+                    const MaterialStatePropertyAll(MyColor.btnColor),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -210,24 +211,27 @@ class ReceiveView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: Get.width / 1.3,
-            height: Get.height / 4.2,
+            width: Get.width / 1.2,
+            height: Get.height / 3.4,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               border: Border.all(color: Colors.black26),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(20),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       MyStr.applying,
-                      style: theme.textTheme.bodyLarge,
+                      style: theme.textTheme.headlineSmall,
                     ),
-                    Text(
-                      MyStr.bodyReceive,
-                      style: theme.textTheme.bodySmall,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: Text(
+                        MyStr.bodyReceive,
+                        style: theme.textTheme.bodySmall,
+                      ),
                     )
                   ]),
             ),
