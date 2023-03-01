@@ -1,3 +1,4 @@
+import 'package:debt/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,14 +22,12 @@ class CircleInformation extends StatelessWidget {
             height: Get.height / 9,
             decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white30,
+                color: MyColor.circleColor,
                 boxShadow: [
-                  BoxShadow(
-                    color: Colors.white10,
-                    offset: Offset(3, 2),
+                  BoxShadow(color: Colors.white38, offset: Offset(-1, -1)
 
-                    /// blurRadius: 12,
-                  )
+                      /// blurRadius: 12,
+                      )
                 ]),
             child: Image.asset(imagePath),
           ),

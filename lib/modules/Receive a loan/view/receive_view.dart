@@ -6,7 +6,6 @@ import 'package:debt/core/value/my_str.dart';
 import 'package:debt/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 import 'package:debt/modules/Receive a loan/widget/receive_widget.dart';
 
 // ignore: must_be_immutable
@@ -32,137 +31,126 @@ class ReceiveView extends StatelessWidget {
       ),
       ReceiveWidget.widgetMyStepper(
         false,
-        Colors.grey,
+        Colors.white60,
         Colors.grey,
         Colors.black,
       ),
     ];
     return Scaffold(
       body: SingleChildScrollView(
-        child: SizedBox(
-          width: Get.width,
-          height: Get.height,
-          child: Column(
-            children: [
-              SizedBox(
-                height: Get.height / 2.3,
-                child: Stack(
-                  children: [
-                    Container(
-                      width: Get.width,
-                      height: Get.height / 2.5,
-                      decoration: const BoxDecoration(
-                          color: MyColor.appBarColor,
-                          borderRadius: BorderRadiusDirectional.vertical(
-                              bottom: Radius.elliptical(200, 80))),
+        child: Column(
+          children: [
+            SizedBox(
+              height: Get.height / 2.3,
+              child: Stack(
+                children: [
+                  Container(
+                    width: Get.width,
+                    height: Get.height / 2.5,
+                    decoration: const BoxDecoration(
+                        color: MyColor.appBarColor,
+                        borderRadius: BorderRadiusDirectional.vertical(
+                            bottom: Radius.elliptical(200, 80))),
+                  ),
+                  Positioned(
+                    top: 40,
+                    right: 50,
+                    child: Text(
+                      MyStr.welcomeStr,
+                      style: theme.textTheme.titleSmall,
                     ),
-                    Positioned(
-                      top: 40,
-                      right: 50,
-                      child: Text(
-                        MyStr.welcomeStr,
-                        style: theme.textTheme.titleSmall,
-                      ),
+                  ),
+                  Positioned(
+                    top: 60,
+                    right: 50,
+                    child: Text(
+                      "علی مجلسی ",
+                      style: theme.textTheme.titleLarge,
                     ),
-                    Positioned(
-                      top: 60,
-                      right: 50,
-                      child: Text(
-                        "علی مجلسی ",
-                        style: theme.textTheme.titleLarge,
-                      ),
+                  ),
+                  Positioned(
+                    left: 50,
+                    top: 40,
+                    child: Text(
+                      "Logo",
+                      style: theme.textTheme.titleLarge,
                     ),
-                    Positioned(
-                      left: 50,
-                      top: 40,
-                      child: Text(
-                        "Logo",
-                        style: theme.textTheme.titleLarge,
-                      ),
-                    ),
-                    const Positioned(
-                        top: 100,
-                        right: 0,
-                        left: 0,
-                        child: Divider(color: Colors.white)),
-                    Positioned(
-                      top: 135,
-                      width: Get.width,
-                      right: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Opacity(
-                            opacity: .9,
-                            child: Container(
-                              width: Get.width / 5,
-                              height: Get.height / 9,
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white30,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.white10,
-                                      offset: Offset(3, 2),
+                  ),
+                  const Positioned(
+                      top: 100,
+                      right: 0,
+                      left: 0,
+                      child: Divider(color: Colors.white)),
+                  Positioned(
+                    top: 135,
+                    width: Get.width,
+                    right: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Opacity(
+                          opacity: .9,
+                          child: Container(
+                            width: Get.width / 5,
+                            height: Get.height / 9,
+                            decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: MyColor.circleColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.white38,
+                                      offset: Offset(-1, -1)
 
                                       /// blurRadius: 12,
-                                    )
-                                  ]),
-                              child: Image.asset(
-                                  Assets.images.batteryCharging.path),
-                            ),
+                                      )
+                                ]),
+                            child:
+                                Image.asset(Assets.images.batteryCharging.path),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
-                            child: Text(
-                              "دریافت وام",
-                              style: theme.textTheme.titleLarge,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      top: 250,
-                      right: 170,
-                      left: 170,
-                      child: Container(
-                        height: Get.height / 15,
-                        decoration: const BoxDecoration(
-                          color: MyColor.appBarColor,
-                          borderRadius: BorderRadiusDirectional.only(
-                              bottomEnd: Radius.elliptical(500, 400),
-                              bottomStart: Radius.elliptical(500, 400),
-                              topEnd: Radius.elliptical(300, 100),
-                              topStart: Radius.elliptical(300, 100)),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 22),
-                          child: Image.asset(Assets.images.vector.path),
-                        ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20.0),
+                          child: Text(
+                            "دریافت وام",
+                            style: theme.textTheme.titleLarge,
+                          ),
+                        )
+                      ],
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                height: Get.height / 1.9,
-                width: Get.width,
-                child: Obx(
-                  () => IndexedStack(
-                    index: indexPage.value,
-                    children: [
-                      startProgress(stepperData),
-                      applicantRequest(theme)
-                    ],
                   ),
-                ),
-              )
-            ],
-          ),
+                  Positioned(
+                    top: 250,
+                    right: 170,
+                    left: 170,
+                    child: Container(
+                      height: Get.height / 15,
+                      decoration: const BoxDecoration(
+                        color: MyColor.appBarColor,
+                        borderRadius: BorderRadiusDirectional.only(
+                            bottomEnd: Radius.elliptical(500, 400),
+                            bottomStart: Radius.elliptical(500, 400),
+                            topEnd: Radius.elliptical(300, 100),
+                            topStart: Radius.elliptical(300, 100)),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 22),
+                        child: Image.asset(Assets.images.vector.path),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Obx(
+              () => IndexedStack(
+                index: indexPage.value,
+                children: [startProgress(stepperData), applicantRequest(theme)],
+              ),
+            )
+          ],
         ),
       ),
       bottomNavigationBar: MyStyle.myBottomNavigationBar(),
@@ -187,13 +175,19 @@ class ReceiveView extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-            style: ReceiveWidget.widgetBtnRReceive(false),
+            style: ButtonStyle(
+                elevation: const MaterialStatePropertyAll(1),
+                backgroundColor: MaterialStatePropertyAll(MyColor.btnColor),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ))),
             onPressed: () {
               indexPage.value = 1;
             },
             child: SizedBox(
               width: Get.width / 2.8,
-              height: Get.height / 15,
+              height: Get.height / 12.5,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -201,7 +195,10 @@ class ReceiveView extends StatelessWidget {
                   const Text(MyStr.btnSteperStr),
                 ],
               ),
-            ))
+            )),
+        const SizedBox(
+          height: 50,
+        )
       ],
     );
   }
@@ -249,7 +246,7 @@ class ReceiveView extends StatelessWidget {
             width: Get.width / 5,
             height: Get.height / 22,
             decoration: BoxDecoration(
-                color: Colors.amber[100],
+                color: MyColor.likeBodyColor,
                 borderRadius: BorderRadius.circular(25)),
             child: Center(
                 child: Text(
@@ -260,22 +257,33 @@ class ReceiveView extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Directionality(
-            textDirection: TextDirection.ltr,
-            child: SmoothStarRating(
-                onRatingChanged: (v) {},
-                rating: 4,
-                starCount: 5,
-                size: 40.0,
-                color: Colors.amber,
-                borderColor: Colors.amber,
-                spacing: 0.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(Assets.images.star.path),
+              const SizedBox(
+                width: 15,
+              ),
+              Image.asset(Assets.images.starfill.path),
+              const SizedBox(
+                width: 15,
+              ),
+              Image.asset(Assets.images.starfill.path),
+              const SizedBox(
+                width: 15,
+              ),
+              Image.asset(Assets.images.starfill.path),
+              const SizedBox(
+                width: 15,
+              ),
+              Image.asset(Assets.images.starfill.path),
+            ],
           ),
           const SizedBox(
-            height: 15,
+            height: 40,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
                 onPressed: () {},
@@ -285,13 +293,16 @@ class ReceiveView extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ReceiveWidget.widgetBtnRReceive(true),
-                child: Text(
+                child: const Text(
                   MyStr.sendReport,
-                  style: theme.textTheme.bodyLarge,
+                  style: TextStyle(color: MyColor.appBarColor),
                 ),
-              )
+              ),
             ],
-          )
+          ),
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );

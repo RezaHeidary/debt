@@ -59,6 +59,13 @@ class $AssetsImagesGen {
   AssetGenImage get securityCard =>
       const AssetGenImage('assets/images/security-card.png');
 
+  /// File path: assets/images/star.png
+  AssetGenImage get star => const AssetGenImage('assets/images/star.png');
+
+  /// File path: assets/images/starfill.png
+  AssetGenImage get starfill =>
+      const AssetGenImage('assets/images/starfill.png');
+
   /// File path: assets/images/water.png
   AssetGenImage get water => const AssetGenImage('assets/images/water.png');
 
@@ -78,6 +85,8 @@ class $AssetsImagesGen {
         paason,
         receiptItem,
         securityCard,
+        star,
+        starfill,
         water
       ];
 }
