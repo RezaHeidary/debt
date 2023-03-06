@@ -13,10 +13,12 @@ class ReceiveWidget {
         title: StepperText(
           MyStr.formStr,
           textStyle: TextStyle(
-            color: textColor,
-          ),
+              color: textColor, fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        subtitle: StepperText(MyStr.formBodyStr),
+        subtitle: StepperText(
+          MyStr.formBodyStr,
+          textStyle: const TextStyle(color: MyColor.appBarColor, fontSize: 14),
+        ),
         iconWidget: Container(
           decoration: BoxDecoration(
               border: Border.all(color: borderColor),
@@ -35,13 +37,14 @@ class ReceiveWidget {
     return ButtonStyle(
         elevation: const MaterialStatePropertyAll(.0),
         backgroundColor: MaterialStatePropertyAll(
-            isReport ? Colors.white70 : MyColor.btnColor),
+            isReport ? Colors.white70 : MyColor.btnBackColor),
         fixedSize:
             MaterialStatePropertyAll(Size(Get.width / 2.8, Get.height / 12)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
           side: BorderSide(
-              width: .9, color: isReport ? Colors.black26 : MyColor.btnColor),
+              width: .9,
+              color: isReport ? Colors.black26 : MyColor.btnBackColor),
           borderRadius: BorderRadius.circular(20),
         )));
   }

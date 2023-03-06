@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../gen/assets.gen.dart';
 
-class UserWidget extends StatelessWidget {
-  const UserWidget({super.key});
+class TextBoxUserWidget extends StatelessWidget {
+  const TextBoxUserWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

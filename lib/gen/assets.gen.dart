@@ -21,6 +21,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/Ellipse.png
   AssetGenImage get ellipse => const AssetGenImage('assets/images/Ellipse.png');
 
+  /// File path: assets/images/Home.png
+  AssetGenImage get home => const AssetGenImage('assets/images/Home.png');
+
+  /// File path: assets/images/Profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/Profile.png');
+
   /// File path: assets/images/Vector.png
   AssetGenImage get vector => const AssetGenImage('assets/images/Vector.png');
 
@@ -51,6 +57,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/paason.png
   AssetGenImage get paason => const AssetGenImage('assets/images/paason.png');
 
+  /// File path: assets/images/paint.png
+  AssetGenImage get paint => const AssetGenImage('assets/images/paint.png');
+
   /// File path: assets/images/receipt-item.png
   AssetGenImage get receiptItem =>
       const AssetGenImage('assets/images/receipt-item.png');
@@ -74,6 +83,8 @@ class $AssetsImagesGen {
         camera,
         edit,
         ellipse,
+        home,
+        profile,
         vector,
         work,
         batteryCharging,
@@ -83,6 +94,7 @@ class $AssetsImagesGen {
         frame,
         moneys,
         paason,
+        paint,
         receiptItem,
         securityCard,
         star,

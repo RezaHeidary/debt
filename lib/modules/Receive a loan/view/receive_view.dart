@@ -1,6 +1,7 @@
 import 'package:another_stepper/dto/stepper_data.dart';
 import 'package:another_stepper/widgets/another_stepper.dart';
 import 'package:debt/core/theme/colors.dart';
+import 'package:debt/core/theme/custom_paint/custom_paint_appbar.dart';
 import 'package:debt/core/theme/style.dart';
 import 'package:debt/core/value/my_str.dart';
 import 'package:debt/gen/assets.gen.dart';
@@ -19,128 +20,27 @@ class ReceiveView extends StatelessWidget {
     List<StepperData> stepperData = [
       ReceiveWidget.widgetMyStepper(
         true,
-        MyColor.btnColor,
-        MyColor.btnColor,
-        MyColor.btnColor,
+        MyColor.btnBackColor,
+        MyColor.btnBackColor,
+        MyColor.btnBackColor,
       ),
       ReceiveWidget.widgetMyStepper(
         false,
         Colors.white,
-        MyColor.btnColor,
+        MyColor.btnBackColor,
         Colors.black,
       ),
       ReceiveWidget.widgetMyStepper(
-        false,
-        Colors.white60,
-        Colors.grey,
-        Colors.black,
-      ),
+          false,
+          const Color.fromARGB(255, 239, 239, 242),
+          const Color.fromARGB(255, 239, 239, 242),
+          Colors.black),
     ];
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: Get.height / 2.3,
-              child: Stack(
-                children: [
-                  Container(
-                    width: Get.width,
-                    height: Get.height / 2.5,
-                    decoration: const BoxDecoration(
-                        color: MyColor.appBarColor,
-                        borderRadius: BorderRadiusDirectional.vertical(
-                            bottom: Radius.elliptical(200, 80))),
-                  ),
-                  Positioned(
-                    top: 40,
-                    right: 50,
-                    child: Text(
-                      MyStr.welcomeStr,
-                      style: theme.textTheme.titleSmall,
-                    ),
-                  ),
-                  Positioned(
-                    top: 60,
-                    right: 50,
-                    child: Text(
-                      "علی مجلسی ",
-                      style: theme.textTheme.titleLarge,
-                    ),
-                  ),
-                  Positioned(
-                    left: 50,
-                    top: 40,
-                    child: Text(
-                      "Logo",
-                      style: theme.textTheme.titleLarge,
-                    ),
-                  ),
-                  const Positioned(
-                      top: 100,
-                      right: 0,
-                      left: 0,
-                      child: Divider(color: Colors.white)),
-                  Positioned(
-                    top: 135,
-                    width: Get.width,
-                    right: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Opacity(
-                          opacity: .9,
-                          child: Container(
-                            width: Get.width / 5,
-                            height: Get.height / 9,
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: MyColor.circleColor,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.white38,
-                                      offset: Offset(-1, -1)
-
-                                      /// blurRadius: 12,
-                                      )
-                                ]),
-                            child:
-                                Image.asset(Assets.images.batteryCharging.path),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
-                          child: Text(
-                            "دریافت وام",
-                            style: theme.textTheme.titleLarge,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    top: 250,
-                    right: 170,
-                    left: 170,
-                    child: Container(
-                      height: Get.height / 15,
-                      decoration: const BoxDecoration(
-                        color: MyColor.appBarColor,
-                        borderRadius: BorderRadiusDirectional.only(
-                            bottomEnd: Radius.elliptical(500, 400),
-                            bottomStart: Radius.elliptical(500, 400),
-                            topEnd: Radius.elliptical(300, 100),
-                            topStart: Radius.elliptical(300, 100)),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 22),
-                        child: Image.asset(Assets.images.vector.path),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            appBar(theme),
             const SizedBox(
               height: 15,
             ),
@@ -157,6 +57,88 @@ class ReceiveView extends StatelessWidget {
     );
   }
 
+  appBar(theme) {
+    return CustomPaint(
+      painter: AppbarCustom(),
+      child: SizedBox(
+        height: Get.height / 2.5,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 40,
+              right: 50,
+              child: Text(
+                MyStr.welcomeStr,
+                style: theme.textTheme.titleSmall,
+              ),
+            ),
+            Positioned(
+              top: 60,
+              right: 50,
+              child: Text(
+                "علی مجلسی ",
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+            Positioned(
+              left: 50,
+              top: 40,
+              child: Text(
+                "Logo",
+                style: theme.textTheme.headlineLarge,
+              ),
+            ),
+            const Positioned(
+                top: 100,
+                right: 0,
+                left: 0,
+                child: Divider(color: Colors.white)),
+            Positioned(
+              top: 135,
+              width: Get.width,
+              right: 35,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Opacity(
+                    opacity: .9,
+                    child: Container(
+                      width: Get.width / 5,
+                      height: Get.height / 9,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: MyColor.circleColor,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.white38, offset: Offset(-1, -1)
+
+                                /// blurRadius: 12,
+                                )
+                          ]),
+                      child: Image.asset(Assets.images.batteryCharging.path),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Text(
+                      "دریافت وام",
+                      style: theme.textTheme.titleLarge,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Positioned(
+                bottom: -58,
+                left: 0,
+                right: 3,
+                child: Image.asset(Assets.images.vector.path))
+          ],
+        ),
+      ),
+    );
+  }
+
   startProgress(stepperData) {
     return Column(
       children: [
@@ -167,18 +149,18 @@ class ReceiveView extends StatelessWidget {
             stepperDirection: Axis.vertical,
             iconWidth: 30,
             iconHeight: 30,
-            activeBarColor: MyColor.btnColor,
-            inActiveBarColor: Colors.grey,
-            verticalGap: 31,
+            activeBarColor: MyColor.btnBackColor,
+            inActiveBarColor: const Color.fromARGB(255, 239, 239, 242),
+            verticalGap: 45,
             activeIndex: 1,
-            barThickness: 1,
+            barThickness: 2,
           ),
         ),
         ElevatedButton(
             style: ButtonStyle(
                 elevation: const MaterialStatePropertyAll(1),
                 backgroundColor:
-                    const MaterialStatePropertyAll(MyColor.btnColor),
+                    const MaterialStatePropertyAll(MyColor.btnBackColor),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -255,7 +237,7 @@ class ReceiveView extends StatelessWidget {
             child: Center(
                 child: Text(
               "بسیار خوب",
-              style: TextStyle(color: Colors.amber[800]),
+              style: TextStyle(color: Colors.amber[700]),
             )),
           ),
           const SizedBox(
@@ -299,7 +281,7 @@ class ReceiveView extends StatelessWidget {
                 style: ReceiveWidget.widgetBtnRReceive(true),
                 child: const Text(
                   MyStr.sendReport,
-                  style: TextStyle(color: MyColor.appBarColor),
+                  style: TextStyle(color: MyColor.btnSendReport),
                 ),
               ),
             ],

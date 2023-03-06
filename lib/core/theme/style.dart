@@ -1,5 +1,6 @@
 import 'package:debt/core/theme/colors.dart';
 import 'package:debt/core/value/my_str.dart';
+import 'package:debt/gen/assets.gen.dart';
 import 'package:debt/route/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,14 +33,15 @@ class MyStyle {
           },
           type: BottomNavigationBarType.fixed,
           fixedColor: MyColor.appBarColor,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded),
+                icon: ImageIcon(AssetImage(Assets.images.profile.path)),
                 label: MyStr.userNavStr),
             BottomNavigationBarItem(
-                icon: Icon(Icons.ballot), label: MyStr.manageNavStr),
+                icon: ImageIcon(AssetImage(Assets.images.work.path)),
+                label: MyStr.manageNavStr),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: ImageIcon(AssetImage(Assets.images.home.path)),
               label: MyStr.homeNavStr,
             ),
           ],
